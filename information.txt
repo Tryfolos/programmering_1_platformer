@@ -1,0 +1,4 @@
+"game location" variable information.
+
+
+main_menu: The first screen you see when you start up the game.
