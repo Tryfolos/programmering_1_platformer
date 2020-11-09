@@ -10,13 +10,24 @@ pygame.init()
 game_location = "main_menu"
 
 
-
 #Main surface variables.
 camera_cords = [0, 0]
-room_size = [10000, 10000]
+room_size = [20000, 20000]
 camera_size = [1920, 1080]
 window_size = [1280, 720]
 
+#Setting window icon.
+icon = pygame.image.load("icon.jpg")
+pygame.display.set_icon(icon)
+
+
+#Setting up fonts.
+font_antonio = pygame.font.Font("fonts/Antonio-Regular.ttf", 24)
+
+
+#Main menu content
+main_menu = pygame.Surface(camera_size)
+main_menu.fill((100, 100, 255))
 
 
 #Creating the three main surfaces.
@@ -48,8 +59,16 @@ while True:
 			sys.exit()
 
 
-#Blitting room surface to camera surface and then the camera surface to the window surface.
-	camera.blit(room, (0 - camera_cords[0], 0 - camera_cords[1]))
+#Main menu.
+	if game_location == "main_menu":
+
+		
+
+		#Blitting all the main menu content to camera.
+		camera.blit(main_menu, (0, 0))
+
+
+#Blitting the camera surface to the window surface.
 	window.blit(pygame.transform.scale(camera, window_size), (0, 0))
 
 #Updating the display
